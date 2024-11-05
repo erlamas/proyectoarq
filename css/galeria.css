@@ -1,0 +1,137 @@
+/* MEJOR */
+
+#photo-container{
+    line-height: 0;
+    --webkit-column-count:4;
+    --moz-column-count: 4;
+    column-count: 4;
+
+    --webkit-column-gap:10px;
+    --moz-column-gap:10px;
+    column-gap: 10px;
+    padding: 10px;
+}
+
+#photo-container .photo{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#photo-container .photo img{
+    width: 100%;
+    height: auto;
+}
+
+
+#photo-container .photo img {
+
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+#photo-container .photo img:hover {
+    transform: scale(1.03);
+}
+
+
+/* Medias */
+
+@media (max-width: 600px) {
+    #photo-container {
+        --webkit-column-count: 1;
+        --moz-column-count: 1;        
+        column-count:1;
+    }
+}
+
+@media (min-width: 600px) {
+    #photo-container {
+            --webkit-column-count: 2;
+            --moz-column-count: 2;
+            column-count: 2;
+        }
+}
+
+@media (min-width: 992px) {
+    #photo-container {
+        --webkit-column-count: 3;
+        --moz-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media (min-width: 1200px) {
+    #photo-container {
+        --webkit-column-count: 4;
+        --moz-column-count: 4;
+        column-count: 4;
+    }
+}
+
+/* OTRA FORMA CON FLEX*/
+/* 
+#photo-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+
+}
+
+#photo-container .column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+#photo-container .column .photo{
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+#photo-container .column .photo img{
+    width: 100%;
+    height: auto;
+}
+
+
+#photo-container .column .photo img {
+    
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+#photo-container .column .photo img:hover {
+    transform: scale(1.03);
+}
+
+
+
+@media (max-width: 600px) {
+    #photo-container .column{
+        flex:100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    #photo-container .column {
+        flex: 50%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    #photo-container .column {
+        flex: 33.33%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    #photo-container .column {
+        flex: 25%;
+        max-width: 100%;
+    }
+} */

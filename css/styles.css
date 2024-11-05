@@ -1,0 +1,766 @@
+@import "galeria.css";
+/* Declaración de variables globales*/
+
+:root {
+    
+    --primary-color: #D17623;
+    --primary-color-alt1: #DE8839;
+    --primary-color-alt2: #E39A57;
+    --title-color: #393B3B;
+    --text-color: #7B7F7F;
+    --body-bg-color: #FAFDFF;
+    --color-section: #ebefef;
+    --white-color: #ffffff;
+    
+    
+    --body-font: 'Montserrat', sans-serif;
+
+    --title-font: 'Poppins', sans-serif;
+
+    /* Por defecto un rem (root em) en CSS es igual al tamaño de fuente del elemento raíz (<html>)
+    
+    Por lo general la mayoría de los navegadores web establecen el tamaño de fuente del elemento raíz a 16 píxeles en forma predeterminada. 
+    
+    Entonces si no se cambia el tamaño de fuente en el elemento raíz, 1 rem es igual a 16 píxeles. */
+
+    --header-height: 3.5rem;
+
+    --section-spacing: 4rem;
+    --block-spacing: 2rem;
+    /* alto de linea en los textos del body 1.6 veces el tamaño de la fuente, es decir, 25,6px */
+    --body-line-height: 1.6;
+    /* alto de linea en los titulos 1.6 veces el tamaño de la fuente, es decir, 20,8px */
+    --title-line-height: 1.3;
+
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --h4-font-size: 1rem;
+    --big-font-size: 1rem;
+    --normal-font-size: 0.875rem;
+    --small-font-size: 0.75rem;
+    --smaller-font-size: 0.6875rem;
+
+}
+
+
+/*Elimina los márgenes y padding (relleno) predeterminados y establece el modelo de caja border-box, 
+se facilita el control y la predicción del tamaño de los elementos,
+ lo que es especialmente útil en diseños responsivos y complejos. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración de modelo de diseño: flexbox */
+html,body {
+
+    display: flex;
+    flex-direction: column;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    line-height: var(--body-line-height);
+    background-color: var(--body-bg-color);
+    /* min-height: 100vh; */
+    height: 100%;
+
+}
+
+main{
+    flex: 1;
+}
+/* Color de los enlaces */
+a {
+    color: var(--title-color);
+}
+
+/* Margen superior de los parrafos */
+p {
+    margin-top: 0;
+}
+
+/* Estilos para los encabezados */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: var(--title-color);
+    font-family: var(--title-font);
+    line-height: var(--title-line-height);
+    font-weight: 600;
+}
+
+/* El tamaño de fuente para los encabezados */
+h1 {
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+h4 {
+    font-size: var(--h4-font-size);
+}
+
+/* La Margen inferior y el relleno superior de los h1  */
+.main h1 {
+    margin-bottom: var(--block-spacing);
+    padding-top: var(--block-spacing);
+
+}
+
+/* HEADER ENCABEZADO */
+/* Configuración de modelo de diseño: flexbox */
+.main-header {
+    width: 100%;
+    height: 6rem;
+    background: var(--white-color);
+    /* box-shadow: 0 3px 5px rgba(112, 126, 132, 0.1); */
+    border-bottom: 0.1rem solid #d7d7d7;
+    padding: 1.5rem;
+    display: flex;
+
+    align-items: center;
+    
+
+}
+
+
+/* CONFIGURACIÓN DE MODELO DE DISEÑO: FLEXBOX - CONSIDERACIONES IMPORTANTES PARA ENTENDER EL MODELO:*/
+
+/* 
+display: flex; crea un contenedor flexible.
+Permite la disposición de sus hijos (elementos flexibles) en una sola línea (fila) o en múltiples líneas (columnas), se facilita la alineación y distribución de los elementos dentro del contenedor. */
+
+/* flex-direction:Establece la dirección principal del flujo de los elementos flex.
+
+flex-direction: row; La dirección principal será en una fila (en este caso), de izquierda a derecha (dirección horizontal predeterminada). Los elementos hijos se colocarán uno al lado del otro en una línea horizontal.
+
+Otros Valores Alternativos: 
+
+flex-direction:row-reverse; Invierte la dirección de los elementos en la fila (de derecha a izquierda). 
+flex-direction:column; Coloca los elementos en una columna (de arriba hacia abajo). 
+flex-direction:column-reverse; Invierte la dirección de los elementos en la columna (de abajo hacia arriba).
+
+*/
+
+/* 
+
+justify-content:  Alinea los elementos flex a lo largo del eje principal, es decir, el indicado con flex-direction
+
+ justify-content: center; Centra los elementos hijos dentro del contenedor a lo largo del eje principal (en este caso horizontal).
+ 
+ Valores Alternativos: 
+ 
+ justify-content:flex-start; Alinea los elementos al inicio del contenedor (izquierda).
+ justify-content:flex-end; Alinea los elementos al final del contenedor (derecha).
+ justify-content:space-between; Distribuye los elementos con el máximo espacio posible entre ellos. 
+ justify-content:space-around; Distribuye los elementos con espacio igual alrededor de cada uno.
+ justify-content:space-evenly; Distribuye los elementos con espacio igualadamente.
+*/
+
+/* align-items Alinea los elementos flex a lo largo del eje transversal.
+
+align-items: center; Centra los elementos hijos dentro del contenedor a lo largo del eje transversal (vertical, en este caso)
+
+Valores Alternativos:
+
+align-items:flex-start; Alinea los elementos al inicio del eje transversal (arriba).
+align-items:flex-end; Alinea los elementos al final del eje transversal (abajo). 
+align-items:stretch; Estira los elementos para que llenen todo el contenedor (esto es el valor predeterminado). align-items:baseline: Alinea los elementos según su línea base. */
+
+
+/* div del header */
+.content-wrapper {
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+/* Ancho alto del div Imagen del logo */
+.img-logo {
+    width: 25%;
+    height: 100%;
+
+
+}
+/* Para ajustar la imagen a las dimensiones del contenedor) */
+.img-logo img {
+    object-fit: cover;
+    height: 100%;
+}
+
+/* Menu - Nav*/
+/* Configuración de modelo de diseño: flexbox */
+.main-menu {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+
+}
+
+/* Ul - Configuración de modelo de diseño: flexbox */
+.main-menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-menu li {
+    display: flex;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: var(--title-color);
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.main-menu a:hover {
+    color: var(--primary-color);
+}
+
+
+
+/* Estilo para el enlace pagina activa */
+.main-menu a.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    /* Línea debajo del enlace activo */
+}
+
+
+/* Boton ingresar barra menu */
+.main-menu a.button.btn{
+    border-radius: 0.9rem;
+    padding: 0.4rem 0.9rem;
+}
+/* Mouse sobre el boton */
+.main-menu a.button.btn:hover {
+    color: var(--white-color);
+    border-bottom: none;
+    /* Línea debajo del enlace activo */
+}
+
+
+/* boton registro usuario */
+
+button.btn.btn-success{
+    background: var(--primary-color);
+    border: none;
+}
+
+button.btn.btn-success:hover {
+    background: var(--primary-color-alt1);
+    border: none;
+}
+/* Para ocultar la etiqueta y el input checbox del menu amburguesa */
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+
+/* SECCIÓN DEL BANNER */
+/* Configuración de modelo de diseño: flexbox */
+
+.main-banner {
+    width: 100%;
+    height: 85vh;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.23) 0%, rgba(19, 19, 19, 0.23) 100%), url('../images/disenando.jpg') no-repeat center center/cover;   /* Combina un gradiente lineal de arriba hacia abajo, y una imagen de fondo para que el texto blanco del banner se vea un poco más */
+    display: flex;
+    flex-direction: column; /* Eje principal: vertical. Coloca los elementos en una columna (de arriba hacia abajo)  */ 
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    
+
+    gap: 2rem;  /* Espacio entre los elementos secundarios (hijos) del contenedor */
+    
+
+}
+
+/* Color y tamaños de la fuente del h1 y h2 del banner */
+.title,
+.subtitle {
+    color: var(--white-color);
+
+}
+
+.title {
+    font-size: 4rem;
+}
+
+.subtitle {
+    font-size: 2rem;
+}
+
+/* Relleno, borde radio, peso de la fuente, color de la fuente y fondo del botón del banner */
+.button {
+
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.25rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--white-color);
+    background: var(--primary-color);
+
+}
+
+/* Cambiar el color de fondo del botón al pasar el mouse por encima, en el banner */
+.button:hover {
+    background: #DE8839;
+    transition: 0.5s;
+}
+
+/* SECCIÓN PORQUE ELEGIRNOS*/
+/* Configuración de modelo de diseño: flexbox */
+.elegirnos-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 5rem 0;
+
+}
+
+/* article de Porque elegirnos y Servicios*/
+/* Configuración de modelo de diseño: flexbox */
+.information-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: var(--block-spacing);
+}
+
+.subtitle {
+    color: var(--title-color);
+    text-align: center;
+    margin: 1rem auto;
+
+}
+
+.subtitle-banner {
+    color: var(--white-color);
+
+}
+
+
+/* La propiedad margin: 1rem auto; Para centrar elementos horizontalmente en su contenedor. El valor auto para los márgenes izquierdo y derecho permite que el navegador distribuya el espacio de manera equitativa,logrando un centrado perfecto. Esta técnica es particularmente útil para centrar bloques de contenido como divs, imágenes, y otros elementos en el diseño de una página web. */
+
+/* Barra para separar el titulo del parrafo en: Porque elegirnos y en Servicios */
+.barra {
+    margin: 1rem auto;  
+    width: 5%;
+    height: 0.25rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+}
+
+.paragraph {
+    width: 80%;
+    text-align: center;
+    margin: 1rem auto;
+}
+
+
+/* SECCION SERVICIOS -*/
+/* section Configuración de modelo de diseño: flexbox */
+
+.services-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-section);
+    padding: 5rem 0;
+}
+
+/* Configuración de modelo de diseño: flexbox */
+/* div */
+.services {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Configuración de modelo de diseño: flexbox */
+/* article */
+.service-item {
+    flex: 1 1 calc(33.33% - 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Configuración de modelo de diseño: flexbox */
+/* div contenedor de la imagen del servicio */
+.service-icon-imagen {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.service-icon-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Configuración de modelo de diseño: flexbox */
+/* div contenedor del subtitulo, parrafo y boton, del servicio */
+.service-texto {
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+.service-texto h3 {
+    font-size: var(--h3-font-size);
+}
+
+.service-texto p {
+    margin: 1rem 0;
+}
+
+/* Estilos para el boton del servicio */
+.service-texto a {
+    text-decoration: none;
+    width: 50%;
+    padding: 0.3rem 1.25rem;
+    border-radius: 0.3rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+}
+
+
+
+/* ----------------------------------------------------- */
+/* PAGINA NOSOTROS */
+
+/* Configuración de modelo de diseño: flexbox */
+/* article */
+
+
+
+
+/* -------------------------------------------- */
+
+
+
+/*  ---PIE DE PÁGINA---  */
+/* Configuración de modelo de diseño: flexbox */
+/* div contenedor del pie de página */
+
+footer{
+    border-top: 0.1rem solid #d7d7d7;
+}
+
+.content-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    width: 100%;
+    height: var(--altura-encabezado);
+    background: #ffffff;
+    font-size: var(--fuente-menor);
+    text-align: center;    
+}
+
+/* Configuración de modelo de diseño: flexbox */
+/* div contenedor de los iconos redes sociales  */
+.sociales-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+
+/* enlaces iconos redes sociales  */
+.sociales-footer a {
+    padding: 0.25rem;
+    color: var(--title-color);
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+/* Cambiar color al pasar el mouse por encima de los iconos redes sociales */
+.sociales-footer a:hover {
+    color: var(--primary-color-alt2)
+}
+
+/* Margen derecho a todos los enlaces del contenedor a excepción de el último. */
+.sociales-footer a:not(:last-of-type) {
+    margin-right: 1.5rem;
+}
+
+
+
+/* 
+flex: 1 1 100%; Define cómo los elementos seleccionados deben comportarse dentro de un contenedor flex. Combina flex-grow, flex-shrink y flex-basis, así: 
+
+1 (flex-grow): Permite que el elemento crezca para llenar el espacio disponible. Con el valor es 1, el elemento puede crecer según sea necesario.
+ 1 (flex-shrink): Permite que el elemento se encoja si es necesario. Con el valor 1, el elemento puede encogerse si no hay suficiente espacio. 
+ 
+ 100% (flex-basis): Establece el tamaño base del elemento en 100%. Cada elemento ocupará el 100% del ancho disponible del contenedor.
+*/
+
+/* Aplica estilos CSS específicos a dispositivos cuya anchura de pantalla sea de 480 píxeles o menos */
+@media (max-width: 480px) {
+   .service-item, .content-footer {
+        flex: 1 1 100%;    
+        
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle-banner {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* */
+/* Ajuste adicional para pantallas menores a 480px */
+@media (max-width: 480px) {
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0.5rem;
+        /* Reducir el padding para pantallas pequeñas */
+        gap: 0.5rem;
+        /* Menor espacio entre logo y menú */
+    }
+
+    .img-logo {
+        width: 18%;
+        /* Reducir el tamaño del logo */
+        max-width: 80px;
+        /* Limitar tamaño para evitar solapamiento */
+    }
+}
+
+/*  */
+
+
+
+
+/* Aplica estilos a dispositivos cuya anchura de pantalla sea de 768 píxeles o menos.
+Teléfonos móviles grandes y tablets pequeñas. */
+
+@media (max-width: 768px) {
+   /* .service-item {
+        flex: 1 1 calc(50% - 1rem);
+    } */
+
+.main-menu {
+    display: none; /*Oculta el menu*/
+    flex-direction: column;
+    width: 100%;
+    
+    background-color: var(--white-color);
+    position: absolute; /*Posiciona el menú de forma absoluta respecto a su contenedor más cercano con posición relativa */
+    top: var(--header-height);
+    left: 0;
+    z-index: 10; /*El menú se superpone a otros elementos con un índice z más bajo.*/
+}
+
+/*.img-logo {
+ display:none;  Oculta el logo 
+    
+}
+*/
+
+/* */
+.img-logo {
+    display: block;
+    width: 20%;
+    /* Ajusta el tamaño según el diseño */    
+    height: auto;
+    float: left;
+    /* Coloca el logo a la izquierda */
+}
+/* */
+
+ /*.menu-icon {
+   display: block;  Muestra el icono del menú hamburguesa como un elemento de bloque.
+}*/
+
+/* */
+.menu-icon {
+    display: block;
+    float: right;
+    /* Coloca el icono de menú a la derecha */
+    margin-right: 1rem;
+    /* Añade espacio a la derecha si es necesario */
+}
+
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*  */
+
+
+
+
+
+/* Selecciona el menú principal cuando el checkbox con la clase menu-toggle está marcado y está inmediatamente seguido por un elemento con la clase menu-icon*/
+.menu-toggle:checked+.menu-icon+.main-menu {
+    display: flex;
+
+}
+
+.main-menu ul {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* line-height: 4rem; */
+    line-height: 8rem;
+} 
+
+}
+
+
+
+/* flex: 1 1 calc(50% - 1rem) propiedad abreviada flexbox, combina flex-grow,
+flex-shrink y flex-basis, así: 
+
+1: flex-grow, permite que el elemento crezca para llenar el espacio disponible.
+1: flex-shrink, permite que el elemento se encoja si es necesario. 
+calc(50% - 1rem): flex-basis, establece el tamaño base del elemento,calculando que cada service-item ocupe el 50% del contenedor menos 1rem, permitiendo un espacio de 1rem entre ellos. */
+
+/* Aplica estilos a dispositivos cuya anchura de pantalla sea de 1024 píxeles o menos */
+@media (max-width: 1024px) {
+    .service-item {
+        flex: 1 1 calc(50% - 1rem);
+    }
+
+.main-menu ul li a {
+
+    padding: .5rem;    
+
+}
+
+.img-logo {
+    width: 18%;
+    height: 60%;
+
+}
+
+} 
+
+/* adicional para el logo y hamburguesa */
+
+
+/* */
+
+/* Estilos contacto */
+.info-box {
+        /* padding: 1rem; */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        border-radius: 0.5rem;
+        /* margin-bottom: 0.2rem; */
+        /* margin-right: 0.2rem; */
+        padding: 1rem; 
+
+     
+}
+
+ 
+.elementskit-info-box-icon i{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    color:var(--primary-color)
+} 
+
+.btn.btn-primary {
+    background-color: #D17623;
+    border: 0;
+    width: auto;
+}
+
+
+/* Servicios */
+
+.bg-light {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    padding: 1rem0;
+}
+
+.accordion-button.btn-custom {
+
+    background-color: #ffffff;
+
+    color: #4f4b4b;
+
+
+}
+
